@@ -19,7 +19,6 @@ const VideoCard = ({
     snippet,
   },
 }) => {
-  console.log(snippet.thumbnails.high.url);
   return (
     <Card
       sx={{
