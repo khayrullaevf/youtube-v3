@@ -22,9 +22,10 @@ const VideoCard = ({
   return (
     <Card
       sx={{
-        width: { md: "358px", xs: "100%" },
+        width: { md: "320px", lg: "358px", sm: "300px", xs: "100%" },
         boxShadow: "none",
         borderRadius: 0,
+       
       }}
     >
       <Link to={videoId ? `/video/${videoId}` : demoVideoUrl}>
@@ -32,15 +33,22 @@ const VideoCard = ({
           image={snippet?.thumbnails?.high?.url || demoThumbnailUrl}
           alt={snippet?.title}
           sx={{
-            width: { xs: "100%", sm: "358px" },
+            width: { xs: "100%", sm: "300px", lg: "358px", md: "320px" },
             height: 200,
             borderRadius: "20px",
           }}
         />
       </Link>
-      <CardContent sx={{ backgroundColor: "#FFF", height: "106px" ,paddingTop:'-10px'}}>
+      <CardContent
+        sx={{ backgroundColor: "#FFF", height: "106px", paddingTop: "-10px" }}
+      >
         <Link to={videoId ? `/video/${videoId}` : demoVideoUrl}>
-          <Typography variant="subtitle1" fontWeight="bold" color="#1E1E1E">
+          <Typography
+            variant="subtitle1"
+            fontWeight="bold"
+            color="#1E1E1E"
+            sx={{ width: { xs: "100%", sm: "300px" } }}
+          >
             {snippet?.title.slice(0, 60) || demoVideoTitle.slice(0, 60)}
           </Typography>
         </Link>
