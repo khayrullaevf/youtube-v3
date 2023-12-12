@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Box } from "@mui/material";
 
-import { Vedios, ChannelCard } from "./";
+import { Videos, ChannelCard } from "./";
 import { fetchFromAPI } from "../utils/fetchFromAPI";
 
 const ChannelDetail = () => {
@@ -19,7 +19,6 @@ const ChannelDetail = () => {
       (data) => setVidoes(data?.items)
     );
   }, [id]);
-  console.log(vidoes);
 
   return (
     <Box minHeight="95vh">
@@ -32,7 +31,13 @@ const ChannelDetail = () => {
             zIndex: 10,
           }}
         />
-        <ChannelCard channelDetail={channelDetail}/>
+        <ChannelCard channelDetail={channelDetail} marginTop='-93px'/>
+
+      </Box>
+      <Box display='flex' p='2'>
+        <Box sx={{mr:{sm:'100px'}}}/>
+          <Videos videos={vidoes}/>g
+       
 
       </Box>
     </Box>
