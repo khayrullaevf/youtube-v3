@@ -22,7 +22,7 @@ const VideoCard = ({
   return (
     <Card
       sx={{
-        width: { md: "320px", xs: "100%" },
+        width: { md: "358px", xs: "100%" },
         boxShadow: "none",
         borderRadius: 0,
       }}
@@ -31,18 +31,16 @@ const VideoCard = ({
         <CardMedia
           image={snippet?.thumbnails?.high?.url || demoThumbnailUrl}
           alt={snippet?.title}
-          sx={{ width: { xs: "100%", sm: "358px" }, height: 180 }}
+          sx={{
+            width: { xs: "100%", sm: "358px" },
+            height: 200,
+            borderRadius: "20px",
+          }}
         />
       </Link>
-      <CardContent sx={{ backgroundColor: "#1e1e1e", height: "106px" }}>
-        <Link
-          to={
-            snippet?.channelId
-              ? `/channel/${snippet?.channelId}`
-              : demoChannelUrl
-          }
-        >
-          <Typography variant="subtitle1" fontWeight="bold" color="#fff">
+      <CardContent sx={{ backgroundColor: "#FFF", height: "106px" ,paddingTop:'-10px'}}>
+        <Link to={videoId ? `/video/${videoId}` : demoVideoUrl}>
+          <Typography variant="subtitle1" fontWeight="bold" color="#1E1E1E">
             {snippet?.title.slice(0, 60) || demoVideoTitle.slice(0, 60)}
           </Typography>
         </Link>
@@ -53,14 +51,49 @@ const VideoCard = ({
               : demoChannelUrl
           }
         >
-          <Typography variant="subtitle2" fontWeight="bold" color="#gray">
-            {snippet?.channelTitle.slice(0, 60) ||
-              demoChannelTitle.slice(0, 60)}
-            <CheckCircle sx={{ fontSize: 12, color: "gray", ml: 5 }} />
+          <Typography variant="subtitle2" color="gray">
+            {snippet?.channelTitle || demoChannelTitle}
+            <CheckCircle sx={{ fontSize: "12px", color: "gray", ml: "5px" }} />
           </Typography>
         </Link>
       </CardContent>
     </Card>
+    // <Card
+    //   sx={{
+    //     width: { xs: "100%", sm: "358px", md: "320px" },
+    //     boxShadow: "none",
+    //     borderRadius: 0,
+    //   }}
+    // >
+    //   <Link to={videoId ? `/video/${videoId}` : `/video/cV2gBU6hKfY`}>
+    //     <CardMedia
+    //       image={snippet?.thumbnails?.high?.url || demoThumbnailUrl}
+    //       alt={snippet?.title}
+    //       sx={{ width: { xs: "100%", sm: "358px" }, height: 180 }}
+    //     />
+    //   </Link>
+    //   <CardContent sx={{ backgroundColor: "#1E1E1E", height: "106px" }}>
+    //     <Link to={videoId ? `/video/${videoId}` : demoVideoUrl}>
+    //       <Typography variant="subtitle1" fontWeight="bold" color="#FFF">
+    //         {snippet?.title.slice(0, 60) || demoVideoTitle.slice(0, 60)}
+    //       </Typography>
+    //     </Link>
+    //     <Link
+    //       to={
+    //         snippet?.channelId
+    //           ? `/channel/${snippet?.channelId}`
+    //           : demoChannelUrl
+    //       }
+    //     >
+    //       <Typography variant="subtitle2" color="gray">
+    //         {snippet?.channelTitle || demoChannelTitle}
+    //         <CheckCircle
+    //           sx={{ fontSize: "12px", color: "gray", ml: "5px" }}
+    //         />
+    //       </Typography>
+    //     </Link>
+    //   </CardContent>
+    // </Card>
   );
 };
 

@@ -11,12 +11,49 @@ import GraphicEqIcon from "@mui/icons-material/GraphicEq";
 import TheaterComedyIcon from "@mui/icons-material/TheaterComedy";
 import FitnessCenterIcon from "@mui/icons-material/FitnessCenter";
 import DeveloperModeIcon from "@mui/icons-material/DeveloperMode";
+import LocalFireDepartmentIcon from "@mui/icons-material/LocalFireDepartment";
+import SubscriptionsIcon from "@mui/icons-material/Subscriptions";
+import FolderIcon from "@mui/icons-material/Folder";
+import ReceiptLongIcon from "@mui/icons-material/ReceiptLong";
+import AlarmOnIcon from "@mui/icons-material/AlarmOn";
+import StarIcon from "@mui/icons-material/Star";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 
 export const logo = "https://i.ibb.co/s9Qys2j/logo.png";
 
+
 export const categories = [
   { name: "New", icon: <HomeIcon /> },
-  { name: "JS Mastery", icon: <CodeIcon /> },
+  { name: "Trending", icon: <LocalFireDepartmentIcon /> },
+  { name: "Subscriptions", icon: <SubscriptionsIcon /> },
+  { name: "Libary", icon: <FolderIcon /> },
+  { name: "History", icon: <ReceiptLongIcon /> },
+  { name: "Watch later", icon: <AlarmOnIcon /> },
+  { name: "Favourites", icon: <StarIcon /> },
+  { name: "Liked Vedios", icon: <FavoriteBorderIcon /> },
+  { name: "Music", icon: <MusicNoteIcon /> },
+  { name: "Gaming", icon: <SportsEsportsIcon /> },
+  { name: "ReactJS", icon: <CodeIcon /> },
+  { name: "NextJS", icon: <CodeIcon /> },
+  { name: "Education", icon: <SchoolIcon /> },
+  { name: "Podcast", icon: <GraphicEqIcon /> },
+  { name: "Movie", icon: <OndemandVideoIcon /> },
+  { name: "Live", icon: <LiveTvIcon /> },
+  { name: "Sport", icon: <FitnessCenterIcon /> },
+  { name: "Fashion", icon: <CheckroomIcon /> },
+  { name: "Beauty", icon: <FaceRetouchingNaturalIcon /> },
+  { name: "Comedy", icon: <TheaterComedyIcon /> },
+  { name: "Gym", icon: <FitnessCenterIcon /> },
+  { name: "Crypto", icon: <DeveloperModeIcon /> },
+];
+
+
+
+
+
+export const categories2 = [
+  { name: "New", icon: <HomeIcon /> },
+  { name: "WebDevelopmentSchool", icon: <CodeIcon /> },
   { name: "Coding", icon: <CodeIcon /> },
   { name: "ReactJS", icon: <CodeIcon /> },
   { name: "NextJS", icon: <CodeIcon /> },
