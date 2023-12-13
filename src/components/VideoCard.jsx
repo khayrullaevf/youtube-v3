@@ -52,7 +52,7 @@ const VideoCard = ({ vedio: {id: { videoId },snippet,},}) => {
             color="#1E1E1E"
             sx={{ width: { xs: "100%", sm: "300px" } }}
           >
-            {snippet?.title.slice(0, 60) || demoVideoTitle.slice(0, 60)}
+            {snippet?.title.slice(0, 30) || demoVideoTitle.slice(0, 60)}
           </Typography>
         </Link>
         <Link
@@ -62,7 +62,7 @@ const VideoCard = ({ vedio: {id: { videoId },snippet,},}) => {
               : demoChannelUrl
           }
         >
-          <Typography variant="subtitle2" color="gray">
+          <Typography variant="subtitle2" color="#000">
             {snippet?.channelTitle || demoChannelTitle}
             <CheckCircle sx={{ fontSize: "12px", color: "gray", ml: "5px" }} />
           </Typography>

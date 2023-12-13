@@ -34,7 +34,7 @@ const VideoDetail = () => {
   return (
     <Box minHeight="95vh">
       ``
-      <Stack direction={{ xs: "column", md: "row" }}>
+      <Stack direction={{ xs: "column", md: "row" }} padding={2}>
         <Box flex={2}>
           <Box
             sx={{
@@ -48,17 +48,17 @@ const VideoDetail = () => {
               url={`https://www.youtube.com/watch?v=${id}`}
               className="react-player"
               controls
-              
             />
-            <Typography color="#000" variant="h5" fontWeight="bold" p={2}>
+            <Typography color="#000" variant="h5" fontWeight="bold" p={1}>
               {title}
             </Typography>
             <Stack
               direction="row"
-              justifyContent="space-between"
+              justifyContent="start"
+              alignItems="center"
               sx={{ color: "#fff" }}
-              py={1}
-              px={2}
+              py={0.1}
+              px={1}
             >
               <Link to={`/channel/${channelId}`}>
                 <Typography
@@ -71,11 +71,24 @@ const VideoDetail = () => {
                   />
                 </Typography>
               </Link>
-              <Stack direction="row" gap="20px" alignItems="center">
-                <Typography variant="body1" sx={{ opacity: 0.7 }}>
+              <Stack
+                direction="row"
+                gap="10px"
+                alignItems="center"
+                marginLeft={4}
+              >
+                <Typography
+                  variant="body1"
+              
+                  color="#898989"
+                >
                   {parseInt(viewCount).toLocaleString()} views
                 </Typography>
-                <Typography variant="body1" sx={{ opacity: 0.7 }}>
+                <Typography
+                  variant="body1"
+                
+                  color="#898989"
+                >
                   {parseInt(likeCount).toLocaleString()} likes
                 </Typography>
               </Stack>
