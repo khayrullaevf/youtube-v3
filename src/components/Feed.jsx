@@ -39,7 +39,7 @@ const Feed = () => {
 
          </Typography>
       </Box>
-      <Box p={3} sx={{overflowY:'auto',height:'90vh',flex:2}}>
+      <Box p={3} display='flex' flexDirection='column' justifyContent='center' alignItems='center' sx={{overflowY:'auto',height:'90vh',flex:2}}>
         <Typography variant="h4" fontWeight='bold' mb={2} sx={{
           color:'#000'
         }}>
@@ -47,7 +47,7 @@ const Feed = () => {
          <span style={{color:'red'}}> videos</span>
 
         </Typography>
-       <Videos videos={videos}/>
+         <Videos videos={videos}/>
       </Box>
     </Stack>
   );
