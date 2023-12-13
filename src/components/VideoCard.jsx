@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import { Link } from "react-router-dom";
 import { Typography, Card, CardContent, CardMedia } from "@mui/material";
@@ -12,20 +12,30 @@ import {
   demoChannelUrl,
   demoChannelTitle,
 } from "../utils/constant";
+import { fetchFromAPI } from "../utils/fetchFromAPI";
 
-const VideoCard = ({
-  vedio: {
-    id: { videoId },
-    snippet,
-  },
-}) => {
+const VideoCard = ({ vedio: {id: { videoId },snippet,},}) => {
+
+//   const{videoDetail,setVideoDetail}=useState([])
+  
+  
+
+//   useEffect(() => {
+//     fetchFromAPI(
+//       `videos?part=contentDetails%2Csnippet%2Cstatistics&id=${videoId}`
+//     ).then((data)=>setVideoDetail(data));
+   
+//   }, [videoId])
+  
+// console.log(videoDetail);
+
+
   return (
     <Card
       sx={{
         width: { md: "320px", lg: "358px", sm: "300px", xs: "100%" },
         boxShadow: "none",
         borderRadius: 0,
-       
       }}
     >
       <Link to={videoId ? `/video/${videoId}` : demoVideoUrl}>
@@ -62,6 +72,9 @@ const VideoCard = ({
           <Typography variant="subtitle2" color="gray">
             {snippet?.channelTitle || demoChannelTitle}
             <CheckCircle sx={{ fontSize: "12px", color: "gray", ml: "5px" }} />
+          </Typography>
+          <Typography variant="subtitle2" color="gray">
+            12 views {snippet?.publishedAt} ago
           </Typography>
         </Link>
       </CardContent>

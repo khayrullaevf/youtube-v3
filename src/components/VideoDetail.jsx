@@ -4,7 +4,7 @@ import ReactPlayer from "react-player";
 import { Typography, Box, Stack } from "@mui/material";
 import { CheckCircle } from "@mui/icons-material";
 
-import { Videos } from "./";
+import { Loading, Videos } from "./";
 import { fetchFromAPI } from "../utils/fetchFromAPI";
 
 const VideoDetail = () => {
@@ -23,7 +23,7 @@ const VideoDetail = () => {
       ).then((data) => setVideos(data.items));
     }, [id]);
   
-  if (!videoDetail?.snippet) return 'Loading...'
+  if (!videoDetail?.snippet) return <Loading/>;
   const {
     snippet: { title, channelId, channelTitle },
     statistics: { viewCount, likeCount },
@@ -32,16 +32,25 @@ const VideoDetail = () => {
 
 
   return (
-    <Box minHeight="95vh">``
+    <Box minHeight="95vh">
+      ``
       <Stack direction={{ xs: "column", md: "row" }}>
         <Box flex={2}>
-          <Box sx={{ width: "100%", position: "sticky", top: "86px",left:'90px' }}>
+          <Box
+            sx={{
+              width: "95%",
+              position: "sticky",
+              top: "86px",
+              left: "90px",
+            }}
+          >
             <ReactPlayer
               url={`https://www.youtube.com/watch?v=${id}`}
               className="react-player"
               controls
+              
             />
-            <Typography color="#fff" variant="h5" fontWeight="bold" p={2}>
+            <Typography color="#000" variant="h5" fontWeight="bold" p={2}>
               {title}
             </Typography>
             <Stack
@@ -54,7 +63,7 @@ const VideoDetail = () => {
               <Link to={`/channel/${channelId}`}>
                 <Typography
                   variant={{ sm: "subtitle1", md: "h6" }}
-                  color="#fff"
+                  color="#898989"
                 >
                   {channelTitle}
                   <CheckCircle
@@ -80,8 +89,7 @@ const VideoDetail = () => {
           alignItems="center"
           flex={1}
         >
-            <Videos videos={videos} direction="column" />
-          
+          <Videos videos={videos} direction="column" />
         </Box>
       </Stack>
     </Box>

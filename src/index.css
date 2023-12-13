@@ -81,8 +81,13 @@ a {
 
   .react-player {
     height: 45vh !important;
+    border-radius: 25px !important;
   }
   .search-bar{
     width:200px;
   }
+}
+
+.react-player iframe{
+  border-radius: 25px !important;
 }
