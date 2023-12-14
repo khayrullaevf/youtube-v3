@@ -1,11 +1,15 @@
 import React from "react";
+import { useTheme } from "./ThemeContext.jsx";
 
 import { Stack, Typography } from "@mui/material";
+import LightModeIcon from "@mui/icons-material/LightMode";
+import NightlightIcon from "@mui/icons-material/Nightlight";
 import { Link } from "react-router-dom";
 
 import { logo } from "../utils/constant.js";
 import SearchBar from "./SearchBar.jsx";
 const Navbar = () => {
+   const { isDarkMode, toggleMode } = useTheme();
   return (
     <Stack
       direction="row"
@@ -13,7 +17,7 @@ const Navbar = () => {
       p={2}
       sx={{
         position: "sticky",
-        background: "#fff",
+        background: `${isDarkMode ? "#000" : "#fff"}`,
         top: 0,
         justifyContent: "space-between",
       }}
@@ -21,13 +25,32 @@ const Navbar = () => {
       <Link to="/" style={{ display: "flex", alignItems: "center" }}>
         <img src={logo} alt="logo" height={45} />
         <Typography
-          style={{ fontSize: "25px", fontWeight: "900", marginLeft: "10px" }}
-          sx={{ display: { xs: "none", lg:'block' } }}
+          style={{
+            fontSize: "25px",
+            fontWeight: "900",
+            marginLeft: "10px",
+          }}
+          sx={{
+            display: { xs: "none", lg: "block" },
+            color: `${isDarkMode ? "#fff" : "#000"}`,
+          }}
         >
           YouTube
         </Typography>
       </Link>
-      <SearchBar />
+      <div style={{ display: "flex", columnGap: "10px" }}>
+        <button
+          style={{ background: `${isDarkMode ? "#000" : "#fff"}`,border:'none' }}
+          onClick={toggleMode}
+        >
+          {isDarkMode ? (
+            <LightModeIcon style={{ color: "yellow" }} />
+          ) : (
+            <NightlightIcon style={{ color: "yellow" }} />
+          )}
+        </button>
+        <SearchBar />
+      </div>
     </Stack>
   );
 };

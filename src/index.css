@@ -96,3 +96,12 @@ a {
 /* Register */
 
 
+.dark-mode {
+  background-color: #1a1a1a;
+  color: #fff;
+}
+
+.light-mode {
+  background-color: #fff;
+  color: #333;
+}
