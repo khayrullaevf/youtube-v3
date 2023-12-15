@@ -100,6 +100,11 @@ a {
   }
 }
 
+@media screen and (max-width: 389px){
+.search-bar {
+    width: 100px;
+}
+}
 .react-player iframe{
   border-radius: 25px !important;
 }

@@ -5,7 +5,12 @@ import { Link } from "react-router-dom";
 
 import { demoProfilePicture } from "../utils/constant";
 
-const ChannelCard = ({ channelDetail, marginTop }) => (
+import { useTheme } from "./ThemeContext";
+
+const ChannelCard = ({ channelDetail, marginTop }) =>{
+
+  const {isDarkMode}=useTheme()
+return(
   <Box
     sx={{
       boxShadow: "none",
@@ -42,7 +47,7 @@ const ChannelCard = ({ channelDetail, marginTop }) => (
             border: "1px solid #e3e3e3",
           }}
         />
-        <Typography variant="h6" color="#000">
+        <Typography variant="h6" color={`${isDarkMode?'#fff':'#000'}`}>
           {channelDetail?.snippet?.title}
           <CheckCircle sx={{ fontSize: 14, color: "gray", ml: 2 }} />
         </Typography>
@@ -57,6 +62,6 @@ const ChannelCard = ({ channelDetail, marginTop }) => (
       </CardContent>
     </Link>
   </Box>
-);
+)};
 
 export default ChannelCard;

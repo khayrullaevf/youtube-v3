@@ -5,11 +5,15 @@ import { Box } from "@mui/material";
 import { Videos, ChannelCard } from "./";
 import { fetchFromAPI } from "../utils/fetchFromAPI";
 
+import { useTheme } from "./ThemeContext";
+
 const ChannelDetail = () => {
   const [channelDetail, setChannelDetail] = useState(null);
   const [vidoes, setVidoes] = useState([]);
 
   const { id } = useParams();
+
+  const {isDarkMode}=useTheme()
 
   useEffect(() => {
     fetchFromAPI(`channels?part=snippet&id=${id}`).then((data) =>
@@ -26,8 +30,7 @@ const ChannelDetail = () => {
         <div
           style={{
             height: "300px",
-            background:
-              "linear-gradient(90deg, rgba(0,238,247,1) 0%, rgba(206,3,184,1) 100%, rgba(0,212,255,1) 100%)",
+            background:`${isDarkMode?'#000':"linear-gradient(90deg, rgba(0,238,247,1) 0%, rgba(206,3,184,1) 100%, rgba(0,212,255,1) 100%)"}`,
             zIndex: 10,
           }}
         />

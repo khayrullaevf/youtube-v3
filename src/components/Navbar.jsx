@@ -46,7 +46,7 @@ const Navbar = () => {
           {isDarkMode ? (
             <LightModeIcon style={{ color: "yellow" }} />
           ) : (
-            <NightlightIcon style={{ color: "yellow" }} />
+            <NightlightIcon style={{ color: "#1F3641" }} />
           )}
         </button>
         <SearchBar />

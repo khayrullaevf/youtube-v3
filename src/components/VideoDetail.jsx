@@ -4,10 +4,14 @@ import ReactPlayer from "react-player";
 import { Typography, Box, Stack } from "@mui/material";
 import { CheckCircle } from "@mui/icons-material";
 
+import { useTheme } from "./ThemeContext";
+
 import { Loading, Videos } from "./";
 import { fetchFromAPI } from "../utils/fetchFromAPI";
 
 const VideoDetail = () => {
+
+  const{isDarkMode}=useTheme()
 
     const [videoDetail, setVideoDetail] = useState([]);
     const [videos, setVideos] = useState([]);
@@ -48,7 +52,12 @@ const VideoDetail = () => {
               className="react-player"
               controls
             />
-            <Typography color="#000" variant="h5" fontWeight="bold" p={1}>
+            <Typography
+              color={`${isDarkMode?'#fff':'#000'}`}
+              variant="h5"
+              fontWeight="bold"
+              p={1}
+            >
               {title}
             </Typography>
             <Stack
@@ -76,18 +85,10 @@ const VideoDetail = () => {
                 alignItems="center"
                 marginLeft={4}
               >
-                <Typography
-                  variant="body1"
-              
-                  color="#898989"
-                >
+                <Typography variant="body1" color="#898989">
                   {parseInt(viewCount).toLocaleString()} views
                 </Typography>
-                <Typography
-                  variant="body1"
-                
-                  color="#898989"
-                >
+                <Typography variant="body1" color="#898989">
                   {parseInt(likeCount).toLocaleString()} likes
                 </Typography>
               </Stack>
