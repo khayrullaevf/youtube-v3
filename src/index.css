@@ -25,12 +25,24 @@ a {
   background-color: transparent;
 }
 
-.category-btn:hover {
-  background-color: #FC1503 !important;
+/* 
+.category-btn:hover span{
+  color: #fff!important;
+} */
+
+.category-btn.category-btn.dark-mode:hover span{
+  color: #fff!important;
+}
+.category-btn.category-btn.light-mode:hover span{
+  color: #272727!important;
+}
+.category-btn.light-mode:hover{
+  background-color: #F2F2F2 !important;
   color: white !important;
 }
 
-.category-btn:hover span{
+.category-btn.dark-mode:hover{
+  background-color: #272727 !important;
   color: white !important;
 }
 
@@ -93,15 +105,14 @@ a {
 }
 
 
-/* Register */
 
 
-.dark-mode {
-  background-color: #1a1a1a;
-  color: #fff;
+
+/* .sidebar-icon__dark-mode:hover{
+  background-color: #272727 !important;
+  color: white !important;
 }
-
-.light-mode {
-  background-color: #fff;
-  color: #333;
-}
+.sidebar-icon__light-mode:hover{
+ background-color: #cb1313 !important;
+  color: white !important;
+} */

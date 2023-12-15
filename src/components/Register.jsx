@@ -42,7 +42,7 @@ const Register = () => {
         </div>
         <div className="form-control">
           <input
-            type="email"
+            type="text"
             onChange={handleEmailChange}
             value={email}
             placeholder="Enter your  email"

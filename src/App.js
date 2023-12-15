@@ -15,38 +15,30 @@ import {
 function App() {
   const isLoggedIn = localStorage.getItem("password");
   const { isDarkMode } = useTheme();
- if (!isLoggedIn) {
-  console.log("No data found in localStorage.");
-  
- } else {
-   const parsedData = JSON.parse(isLoggedIn);
-   console.log(parsedData);
- }
- console.log(localStorage.getItem('password'));
   return (
-      <BrowserRouter>
-        <Box
-          sx={{
-            background:`${isDarkMode ? "#000" : "#fff"}`
-          }}
-        >
+    <BrowserRouter>
+      <Box
+        sx={{
+          background: `${isDarkMode ? "#000" : "#fff"}`,
+        }}
+      >
+        {window.location.pathname !== "/register" ? (
           <Navbar />
-          <Routes>
-            <Route path="/" exact element={<Feed />} />
-            <Route path="/video/:id" element={<VideoDetail />} />
-            <Route path="/register" element={<Register />} />
-            {isLoggedIn ? (
-              <Route path="/channel/:id" element={<ChannelDetail />} />
-            ) : (
-              <Route
-                path="/channel/:id"
-                element={<Navigate to="/register" />}
-              />
-            )}
-            <Route path="/search/:searchTerm" element={<SearchFeed />} />
-          </Routes>
-        </Box>
-      </BrowserRouter>
+        ) : null}
+
+        <Routes>
+          <Route path="/" exact element={<Feed />} />
+          <Route path="/video/:id" element={<VideoDetail />} />
+          <Route path="/register" element={<Register />} />
+          {isLoggedIn ? (
+            <Route path="/channel/:id" element={<ChannelDetail />} />
+          ) : (
+            <Route path="/channel/:id" element={<Navigate to="/register" />} />
+          )}
+          <Route path="/search/:searchTerm" element={<SearchFeed />} />
+        </Routes>
+      </Box>
+    </BrowserRouter>
   );
 }
 
