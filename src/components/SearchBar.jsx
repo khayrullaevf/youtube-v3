@@ -51,7 +51,9 @@ const SearchBar = () => {
       onSubmit={handleSubmit}
       sx={{
         borderRadius: 20,
-        border: `${isDarkMode ? "0.1rem solid #303030" : "0.1rem solid #e3e3e3"}`,
+        border: `${
+          isDarkMode ? "0.1rem solid #303030" : "0.1rem solid #e3e3e3"
+        }`,
         pl: 2,
         boxShadow: "none",
         mr: { sm: 5 },
@@ -60,11 +62,14 @@ const SearchBar = () => {
     >
       <input
         type="text"
-        className="search-bar"
+        className='search-bar'
         placeholder="Search..."
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
-        style={{ background: `${isDarkMode ? "#000" : "#fff"}` }}
+        style={{
+          background: `${isDarkMode ? "#000" : "#fff"}`,
+          color: `${isDarkMode ? "#fff" : "#000"}`,
+        }}
       />
       <IconButton
         type="submit"

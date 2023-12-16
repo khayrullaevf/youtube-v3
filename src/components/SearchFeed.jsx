@@ -5,10 +5,16 @@ import {  Videos } from "./";
 import { fetchFromAPI } from "../utils/fetchFromAPI";
 import { useParams } from "react-router-dom";
 
+import { useTheme } from "./ThemeContext";
+
 const SearchFeed = () => {
   const [videos, setVideos] = useState([]);
   const {searchTerm}=useParams()
 
+
+
+
+  const {isDarkMode}=useTheme()
   
 
   useEffect(() => {
@@ -24,11 +30,11 @@ const SearchFeed = () => {
         fontWeight="bold"
         mb={2}
         sx={{
-          color: "white",
+          color: `${isDarkMode ? "#fff" : "#000"}`,
         }}
       >
-       
-        Results for : <span style={{ color: "#F31503" }}>{searchTerm}</span> videos
+        Results for : <span style={{ color: "#F31503" }}>{searchTerm}</span>{" "}
+        videos
       </Typography>
       <Videos videos={videos} />
     </Box>

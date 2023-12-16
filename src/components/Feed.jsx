@@ -4,6 +4,8 @@ import { Box, Stack, Typography } from "@mui/material";
 import { SideBar, Videos } from "./";
 import { fetchFromAPI } from "../utils/fetchFromAPI";
 
+import { useTheme } from "./ThemeContext";
+
 
 const Feed = () => {
   const [selectedCategory, setSelectedCategory] = useState('New')
@@ -19,6 +21,8 @@ const Feed = () => {
   }, [selectedCategory])
   
 
+  const {isDarkMode}=useTheme()
+
 
 
 
@@ -26,28 +30,31 @@ const Feed = () => {
   return (
     <Stack sx={{ flexDirection: { sx: "column", md: "row" } }}>
       <Box sx={{ height: { sx: "auto", md: "92vh" } }}>
-
         <SideBar
-         selectedCategory={selectedCategory}
-         setSelectedCategory={setSelectedCategory}
-        
-        
+          selectedCategory={selectedCategory}
+          setSelectedCategory={setSelectedCategory}
         />
-         
-         <Typography className="copyright" variant="body2" sx={{mt:1.5, color:'#fff'}}>
-          Fazliddin Khayrullaev 2023
-
-         </Typography>
       </Box>
-      <Box p={3} display='flex' flexDirection='column' justifyContent='center' alignItems='center' sx={{overflowY:'auto',height:'90vh',flex:2}}>
-        <Typography variant="h4" fontWeight='bold' mb={2} sx={{
-          color:'#000'
-        }}>
+      <Box
+        p={3}
+        display="flex"
+        flexDirection="column"
+        justifyContent="center"
+        alignItems="center"
+        sx={{ overflowY: "auto", height: "90vh", flex: 2 }}
+      >
+        <Typography
+          variant="h4"
+          fontWeight="bold"
+          mb={2}
+          sx={{
+            color: `${isDarkMode ? "#fff" : "#000"}`,
+          }}
+        >
           {selectedCategory}
-         <span style={{color:'red'}}> videos</span>
-
+          <span style={{ color: "red" }}> videos</span>
         </Typography>
-         <Videos videos={videos}/>
+        <Videos videos={videos} />
       </Box>
     </Stack>
   );

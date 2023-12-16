@@ -1,8 +1,6 @@
-import React from "react";
 import moment from "moment";
 
 import { useTheme } from "./ThemeContext";
-
 
 import { Link } from "react-router-dom";
 import { Typography, Card, CardContent, CardMedia } from "@mui/material";
@@ -17,26 +15,42 @@ import {
   demoChannelTitle,
 } from "../utils/constant";
 
-const VideoCard = ({ vedio: {id: { videoId },snippet,},}) => {
-  // Convert the published date string to a moment object
+const VideoCard = ({
+  vedio: {
+    id: { videoId },
+    snippet,
+  },
+}) => {
   const publishedMoment = moment(snippet?.publishedAt);
-
-  // Calculate the difference between the published date and the current date
   const timeAgo = publishedMoment.fromNow();
+  const { isDarkMode } = useTheme();
 
 
-  const{isDarkMode}=useTheme()
+
+
+
+
+
+    
+
+
+
+ 
 
   return (
     <Card
       sx={{
         width: { md: "340px", lg: "358px", sm: "330px", xs: "100%" },
         boxShadow: "none",
-        borderRadius: '21px',
-        border:'none'
+        borderRadius: "21px",
+        border: "none",
+        background: `${isDarkMode ? "#000" : "#fff"}`,
       }}
     >
-      <Link style={{borderRadius:'21px'}} to={videoId ? `/video/${videoId}` : demoVideoUrl} >
+      <Link
+        style={{ borderRadius: "21px" }}
+        to={videoId ? `/video/${videoId}` : demoVideoUrl}
+      >
         <CardMedia
           image={snippet?.thumbnails?.high?.url || demoThumbnailUrl}
           alt={snippet?.title}
@@ -71,7 +85,10 @@ const VideoCard = ({ vedio: {id: { videoId },snippet,},}) => {
               : demoChannelUrl
           }
         >
-          <Typography variant="subtitle2" color={`${isDarkMode ? "#fff" : "#000"}`}>
+          <Typography
+            variant="subtitle2"
+            color={`${isDarkMode ? "#fff" : "#000"}`}
+          >
             {snippet?.channelTitle || demoChannelTitle}
             <CheckCircle sx={{ fontSize: "12px", color: "gray", ml: "5px" }} />
           </Typography>
@@ -83,7 +100,8 @@ const VideoCard = ({ vedio: {id: { videoId },snippet,},}) => {
             gap={2}
             marginTop={0.4}
           >
-            <span> 0 views</span> <span>{timeAgo}</span>
+            <span> views</span>{" "}
+            <span>{timeAgo}</span>
           </Typography>
         </Link>
       </CardContent>

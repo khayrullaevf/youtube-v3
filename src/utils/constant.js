@@ -19,7 +19,8 @@ import AlarmOnIcon from "@mui/icons-material/AlarmOn";
 import StarIcon from "@mui/icons-material/Star";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 
-export const logo = "https://i.ibb.co/s9Qys2j/logo.png";
+export const logo =
+  "https://download.logo.wine/logo/YouTube/YouTube-Icon-Full-Color-Logo.wine.png";
 
 
 export const categories = [
@@ -51,25 +52,7 @@ export const categories = [
 
 
 
-export const categories2 = [
-  { name: "New", icon: <HomeIcon /> },
-  { name: "WebDevelopmentSchool", icon: <CodeIcon /> },
-  { name: "Coding", icon: <CodeIcon /> },
-  { name: "ReactJS", icon: <CodeIcon /> },
-  { name: "NextJS", icon: <CodeIcon /> },
-  { name: "Music", icon: <MusicNoteIcon /> },
-  { name: "Education", icon: <SchoolIcon /> },
-  { name: "Podcast", icon: <GraphicEqIcon /> },
-  { name: "Movie", icon: <OndemandVideoIcon /> },
-  { name: "Gaming", icon: <SportsEsportsIcon /> },
-  { name: "Live", icon: <LiveTvIcon /> },
-  { name: "Sport", icon: <FitnessCenterIcon /> },
-  { name: "Fashion", icon: <CheckroomIcon /> },
-  { name: "Beauty", icon: <FaceRetouchingNaturalIcon /> },
-  { name: "Comedy", icon: <TheaterComedyIcon /> },
-  { name: "Gym", icon: <FitnessCenterIcon /> },
-  { name: "Crypto", icon: <DeveloperModeIcon /> },
-];
+
 
 export const demoThumbnailUrl = "https://i.ibb.co/G2L2Gwp/API-Course.png";
 export const demoChannelUrl = "/channel/UCmXmlB4-HJytD7wek0Uo97A";
