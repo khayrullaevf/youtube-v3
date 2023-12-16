@@ -25,13 +25,7 @@ const VideoCard = ({
   const timeAgo = publishedMoment.fromNow();
   const { isDarkMode } = useTheme();
 
-
-
-
-
-
-
-    console.log(videoId);
+ 
 
 
 
