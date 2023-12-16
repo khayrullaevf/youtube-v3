@@ -102,7 +102,7 @@ a {
 
 @media screen and (max-width: 389px){
 .search-bar {
-    width: 100px;
+    width: 90px;
 }
 }
 .react-player iframe{
@@ -113,11 +113,3 @@ a {
 
 
 
-/* .sidebar-icon__dark-mode:hover{
-  background-color: #272727 !important;
-  color: white !important;
-}
-.sidebar-icon__light-mode:hover{
- background-color: #cb1313 !important;
-  color: white !important;
-} */

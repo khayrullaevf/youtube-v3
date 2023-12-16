@@ -31,7 +31,7 @@ const VideoCard = ({
 
 
 
-    
+    console.log(videoId);
 
 
 
